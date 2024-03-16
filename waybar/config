@@ -1,0 +1,88 @@
+{
+    "layer": "top", // Waybar at top layer
+    "height": 42, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (4px)
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-center": [],
+    "modules-right": ["tray", "pulseaudio", "clock", "custom/swaync", "custom/power"],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+	"on-scroll-up": "hyprctl dispatch workspace e+1",
+	"on-scroll-down": "hyprctl dispatch workspace e-1",
+	"on-click": "activate",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+	    "6": "",
+        },
+	"persistent-workspaces": {
+	    "*": 6
+	}
+    },
+    "hyprland/window": {
+	"max-length": 200
+    },
+    "hyprland/submap": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%m-%d-%Y}",
+	"format": "{:%I:%M %p}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+	"reverse-scrolling": 1,
+        "format": "{icon} {volume}%  {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+	"min-length": 13
+    },
+    "custom/swaync": {
+	"tooltip":true,     
+	"format": "{icon}",
+	"format-icons": {
+	  "notification": "<span color=\"#ebcb8b\"></span>",
+	  "none": "",
+	  "dnd-notification": "<span color=\"#bf616a\"></span>",
+	  "dnd-none": "",
+	  "inhibited-notification": "<span color=\"#ebcb8b\"></span>",
+	  "inhibited-none": "",
+	  "dnd-inhibited-notification": "<span color=\"#bf616a\"></span>",
+	  "dnd-inhibited-none": ""
+	},
+	"return-type": "json",
+	"exec-if": "which swaync-client",
+	"exec": "swaync-client -swb",
+	"on-click": "sleep 0.1 && swaync-client -t -sw",
+	"on-click-right": "swaync-client -d -sw",
+        "escape": true,
+    },
+    "custom/power": {
+        "format": "",
+	"on-click": "~/.config/waybar/scripts/powermenu.sh",
+    }
+}
