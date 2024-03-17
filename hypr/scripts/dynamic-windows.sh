@@ -11,7 +11,7 @@ function handle() {
       workspace_id=-98
     fi
 
-    window_count=$(hyprctl workspaces -j | jq ".[] | select(.id == $workspace_id) | .windows")
+    window_count=$(get_window_count $workspace_id)
     if [[ $window_count -eq 1 ]]
     then
       add_reserved  
@@ -25,13 +25,13 @@ function handle() {
   then
 
     workspace_id=$(hyprctl activewindow -j | jq ".workspace.id")
-    window_count=$(hyprctl workspaces -j | jq ".[] | select(.id == $workspace_id) | .windows")
+    window_count=$(get_window_count $workspace_id)-1
 
-    if [[ $window_count -eq 1 ]];
+    if [[ $window_count -gt 1 ]];
     then
-      add_reserved
-    else
       del_reserved
+    else
+      add_reserved
     fi
 
   elif [[ ${1:0:10} == "movewindow" ]];
@@ -45,7 +45,7 @@ function handle() {
       workspace_id=-98
     fi
 
-    window_count=$(hyprctl workspaces -j | jq ".[] | select(.id == $workspace_id) | .windows")
+    window_count=$(get_window_count $workspace_id)
     if [[ $window_count -eq 1 ]];
     then
       add_reserved
@@ -57,19 +57,13 @@ function handle() {
   then
 
     workspace_id=$(hyprctl activewindow -j | jq ".workspace.id")
-    window_count=$(hyprctl workspaces -j | jq ".[] | select(.id == $workspace_id) | .windows")
+    window_count=$(get_window_count $workspace_id)
 
-    if [[ $window_count -eq 1 ]]
+    if [[ $window_count -gt 1 ]];
     then
-      window_id=$(hyprctl activewindow -j | jq -r ".address")
-      status=$(hyprctl activewindow -j | jq ".floating")
-
-      if [[ $status == "false" ]]
-      then
-        add_reserved
-      else
-        del_reserved
-      fi
+      del_reserved
+    else
+      add_reserved
     fi
 
   elif [[ ${1:0:9} == "workspace" ]];
@@ -82,7 +76,7 @@ function handle() {
       return
     fi
 
-    window_count=$(hyprctl workspaces -j | jq ".[] | select(.id == $workspace_id) | .windows")
+    window_count=$(get_window_count $workspace_id)
 
     if [[ $window_count -eq 1 ]]
     then
@@ -99,7 +93,7 @@ function handle() {
     then
       del_reserved
     else
-      window_count=$(hyprctl activeworkspace -j | jq ".windows")
+      window_count=$(get_window_count $workspace_id)
       if [[ $window_count -eq 1 ]]
       then
         add_reserved
@@ -109,6 +103,10 @@ function handle() {
     fi
 
   fi
+}
+
+function get_window_count() {
+  hyprctl clients -j | jq "[.[] | select(.workspace.id == $1) | select(.floating == false)] | length"
 }
 
 function add_reserved() {
