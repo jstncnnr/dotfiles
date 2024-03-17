@@ -12,13 +12,12 @@ function handle() {
     fi
 
     window_count=$(get_window_count $workspace_id)
-    if [[ $window_count -eq 1 ]]
-    then
-      add_reserved  
-    elif [[ $window_count -eq 2 ]]
+    if [[ $window_count -gt 1 ]]
     then
       del_reserved
       hyprctl dispatch layoutmsg togglesplit
+    else
+      add_reserved
     fi
     
   elif [[ ${1:0:11} == "closewindow" ]];
@@ -46,11 +45,11 @@ function handle() {
     fi
 
     window_count=$(get_window_count $workspace_id)
-    if [[ $window_count -eq 1 ]];
+    if [[ $window_count -gt 1 ]];
     then
-      add_reserved
-    else
       del_reserved
+    else
+      add_reserved
     fi
 
   elif [[ ${1:0:18} == "changefloatingmode" ]];
@@ -78,11 +77,11 @@ function handle() {
 
     window_count=$(get_window_count $workspace_id)
 
-    if [[ $window_count -eq 1 ]]
+    if [[ $window_count -gt 1 ]]
     then
-      add_reserved
-    else
       del_reserved
+    else
+      add_reserved
     fi
 
   elif [[ ${1:0:13} == "activespecial" ]];
@@ -94,11 +93,11 @@ function handle() {
       del_reserved
     else
       window_count=$(get_window_count $workspace_id)
-      if [[ $window_count -eq 1 ]]
+      if [[ $window_count -gt 1 ]]
       then
-        add_reserved
-      else
         del_reserved
+      else
+        add_reserved
       fi
     fi
 
