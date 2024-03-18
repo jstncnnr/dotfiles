@@ -44,8 +44,8 @@
         // "scroll-step": 1, // %, can be a float
 	"reverse-scrolling": 1,
         "format": "{icon} {volume}%  {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-bluetooth": "{icon} {volume}%  {format_source}",
+        "format-bluetooth-muted": " {format_source}",
         "format-muted": " {format_source}",
         "format-source": " {volume}%",
         "format-source-muted": "",
@@ -59,7 +59,8 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-	"min-length": 13
+	"min-length": 13,
+	"ignored-sinks": ["Office", "Justin's MacBook Pro"],
     },
     "custom/swaync": {
 	"tooltip":true,     
