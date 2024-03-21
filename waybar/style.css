@@ -75,6 +75,7 @@ window#waybar.hidden {
 #custom-swaync,
 #custom-power,
 #custom-bluetooth,
+#upower,
 #tray {
     background: #3b4252;
     border-radius: 10px;
@@ -109,6 +110,14 @@ window#waybar.hidden {
     margin-left: 0px;
     padding-left: 4px;
     font-size: 18px;
+}
+
+#upower {
+    font-size: 18px;
+}
+
+#upower.charging {
+    color: #A3BE8C;
 }
 
 #pulseaudio.muted {

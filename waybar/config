@@ -4,7 +4,7 @@
     "spacing": 0, // Gaps between modules (4px)
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
     "modules-center": [],
-    "modules-right": ["tray", "pulseaudio", "clock", "custom/swaync", "custom/power"],
+    "modules-right": ["tray", "upower#trackpad", "pulseaudio", "clock", "custom/swaync", "custom/power"],
     // Modules configuration
     "hyprland/workspaces": {
         "all-outputs": true,
@@ -85,5 +85,14 @@
     "custom/power": {
         "format": "",
 	"on-click": "~/.config/waybar/scripts/powermenu.sh",
-    }
+	"tooltip": false,
+    },
+    "upower#trackpad": {
+    	"native-path": "hid-30:82:16:f1:83:d0-battery",
+	"icon-size": 16,
+	"hide-if-empty": true,
+	"show-icon": false,
+	"format": "󰟸 {percentage}",
+	"format-alt": "󰟸 {percentage}"
+    },
 }
