@@ -4,7 +4,7 @@
     "spacing": 0, // Gaps between modules (4px)
     "modules-left": ["hyprland/workspaces", "hyprland/submap"],
     "modules-center": [],
-    "modules-right": ["tray", "upower#trackpad", "pulseaudio", "clock", "custom/swaync", "custom/power"],
+    "modules-right": ["tray", "pulseaudio", "clock", "custom/swaync", "custom/power"],
     // Modules configuration
     "hyprland/workspaces": {
         "all-outputs": true,
