@@ -23,3 +23,6 @@ for key in "${!etc[@]}"
 do
 	sudo ln -sf "$(pwd)/etc/$key" "${etc[$key]}"
 done
+
+echo "zmodule asdf" >> ~/.zimrc
+echo "zmodule romkatv/powerlevel10k --use degit" >> ~/.zimrc
