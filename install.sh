@@ -4,12 +4,13 @@ declare -a dirs=(
 	"hypr" 
 	"kitty"
 	"nvim"
-	"swaync"
 	"waybar"
 	"wofi"
 	"dunst"
 	"bspwm"
 	"sxhkd"
+	"picom"
+	"polybar"
 )
 
 for i in "${dirs[@]}" 

@@ -6,7 +6,7 @@
     origin = top-right
     offset = 8x8
     scale = 0
-    notification_limit = 20
+    notification_limit = 5
 
     progress_bar = true
     progress_bar_height = 10
@@ -51,7 +51,7 @@
     icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/16x16/legacy/
 
     sticky_history = yes
-    history_length = 20
+    history_length = 5
 
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/xdg-open

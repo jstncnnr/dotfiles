@@ -8,8 +8,8 @@ super + m
 super + q
 	bspc node -c
 
-super + {Left,Right,Up,Down}
-	bspc node -f {west,east,north,south}
+super + {_,shift + }{Left,Right,Up,Down}
+	bspc node -{f,s} {west,east,north,south}
 
 super + {_,shift + }{1-6}
 	bspc {desktop -f,node -d} '^{1-6}'
@@ -23,6 +23,8 @@ XF86Audio{Raise,Lower}Volume
 XF86AudioMute
 	wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
+Print
+	gscreenshot -c -s
 
 # Applications
 super + Return
@@ -33,3 +35,6 @@ super + e
 
 super + b
 	brave
+
+super + space
+	rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/material/scripts/rofi/launcher.rasi

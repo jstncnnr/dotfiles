@@ -72,7 +72,7 @@ window#waybar.hidden {
 #submap,
 #clock,
 #pulseaudio,
-#custom-swaync,
+#custom-dunst,
 #custom-power,
 #custom-bluetooth,
 #upower,
@@ -92,7 +92,7 @@ window#waybar.hidden {
     margin-right: 0px;
 }
 
-#custom-swaync {
+#custom-dunst {
     font-size: 18px;
     border-radius: 0px;
     margin-left: 0px;
