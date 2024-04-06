@@ -7,6 +7,9 @@ declare -a dirs=(
 	"swaync"
 	"waybar"
 	"wofi"
+	"dunst"
+	"bspwm"
+	"sxhkd"
 )
 
 for i in "${dirs[@]}" 

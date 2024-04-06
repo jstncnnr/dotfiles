@@ -1,0 +1,35 @@
+# bspwm hotkeys
+super + Escape
+	pkill -USR1 -x sxhkd
+
+super + m
+	bspc quit
+
+super + q
+	bspc node -c
+
+super + {Left,Right,Up,Down}
+	bspc node -f {west,east,north,south}
+
+super + {_,shift + }{1-6}
+	bspc {desktop -f,node -d} '^{1-6}'
+
+super + v
+	bspc node -t ~floating
+
+XF86Audio{Raise,Lower}Volume
+	wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%{+,-}
+
+XF86AudioMute
+	wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+
+# Applications
+super + Return
+	kitty
+
+super + e
+	thunar
+
+super + b
+	brave
