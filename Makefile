@@ -2,7 +2,7 @@ all:
 	echo "Must select a target OS"
 
 base:
-	stow --verbose --target=$$HOME neovim
+	stow --verbose --target=$$HOME neovim oh-my-posh
 
 osx: clean base
 
