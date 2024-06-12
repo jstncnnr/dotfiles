@@ -1,7 +1,13 @@
-all: clean install
+all:
+	echo "Must select a target OS"
 
-install:
-	stow --verbose --target=$$HOME */
+base:
+	stow --verbose --target=$$HOME neovim
+
+osx: clean base
+
+archlinux: clean base
+	stow --verbose --target=$$HOME kitty Hyprland waybar wofi dunst
 
 clean:
 	stow --verbose --target=$$HOME --delete */
