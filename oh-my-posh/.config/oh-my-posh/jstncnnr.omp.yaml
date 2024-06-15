@@ -11,8 +11,8 @@ blocks:
     style: powerline
     powerline_symbol: 
     leading_powerline_symbol: "<transparent>"
-    foreground: p:white
-    background: p:red
+    foreground: p:black
+    background: p:white
     template: " {{ .Icon }} "
   - type: path
     style: powerline
