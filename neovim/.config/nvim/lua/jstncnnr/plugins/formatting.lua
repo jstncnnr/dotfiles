@@ -9,16 +9,22 @@ return {
 					cpp = true,
 				}
 				return {
-					timeout_ms = 500,
+					timeout_ms = 1000,
 					lsp_fallback = not disabled_types[vim.bo[bufnr].filetype],
 				}
 			end,
+			ft_parsers = {
+				javascript = "babel",
+				javascriptreact = "babel",
+				typescript = "typescript",
+				typescriptreact = "typescript",
+			},
 			formatters_by_ft = {
 				lua = { "stylua" },
-				javascript = { { "prettierd", "prettier" } },
-				typescript = { { "prettierd", "prettier" } },
-				typescriptreact = { { "prettierd", "prettier" } },
-				php = { { "pint" } },
+				javascript = { "prettierd", "prettier", stop_after_first = true },
+				typescript = { "prettierd", "prettier", stop_after_first = true },
+				typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+				php = { "pint" },
 			},
 		},
 	},
