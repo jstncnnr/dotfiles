@@ -1,5 +1,6 @@
 return {
 	"tpope/vim-sleuth",
+	"tpope/vim-fugitive",
 	{
 		"nvim-telescope/telescope.nvim",
 		event = "VimEnter",
