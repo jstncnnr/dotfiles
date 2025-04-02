@@ -1,0 +1,128 @@
+* {
+  font-family: Cantarell, sans-serif;
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: white;
+}
+
+.modules-left,
+.modules-right {
+  background: #2e3440;
+  border-radius: 8px;
+  margin: 8px 8px 0 8px;
+  padding: 4px 4px;
+}
+
+#custom-launcher {
+  font-family:
+    MesloLGS Nerd Font Mono,
+    monospace;
+  font-size: 30px;
+  color: #eceff4;
+  padding: 0 8px;
+  margin-right: 4px;
+}
+
+#custom-launcher:hover {
+  background: #3b4252;
+  border-radius: 6px;
+}
+
+#workspaces {
+  background: #3b4252;
+  border-radius: 6px;
+}
+
+#workspaces * {
+  font-family:
+    MesloLGS Nerd Font Mono,
+    monospace;
+  font-size: 24px;
+}
+
+#workspaces button {
+  color: #7c818c;
+  background: transparent;
+  padding: 0 12px;
+  border-radius: 0;
+  transition: none;
+}
+
+#workspaces button:hover {
+  background: #4c566a;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  transition: none;
+}
+
+#workspaces button:first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+#workspaces button:last-child {
+  border-radius: 0 6px 6px 0;
+}
+
+#workspaces button.persistent:not(.empty):not(.active) {
+  color: #eceff4;
+}
+
+#workspaces brtton.empty {
+  color: #7c818c;
+}
+
+#workspaces button.active {
+  color: #ebc8b8;
+  background: #434c5e;
+}
+
+#workspaces button.urgent {
+  color: #bf616a;
+}
+
+#submap {
+  background: #3b4252;
+  border-radius: 6px;
+  margin-left: 4px;
+  padding: 0 8px;
+}
+
+#tray,
+#pulseaudio,
+#clock,
+#custom-dunst {
+  background: #3b4252;
+  border-radius: 6px;
+  margin-right: 8px;
+  padding: 4px 12px;
+  color: white;
+}
+
+#pulseaudio.muted,
+#pulseaudio.source-muted {
+  color: #bf616a;
+}
+
+#custom-dunst,
+#custom-power {
+  font-family:
+    MesloLGS Nerd Font Mono,
+    monospace;
+  font-size: 24px;
+}
+
+#custom-dunst {
+  padding: 4px 16px;
+}
+
+#custom-power {
+  padding: 4px 12px;
+  margin-left: -4px;
+}

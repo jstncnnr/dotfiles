@@ -1,0 +1,118 @@
+{
+    "layer": "top",
+    "height": 55,
+    "spacing": 0,
+    "modules-left": [
+        "custom/launcher",
+        "hyprland/workspaces",
+        "hyprland/submap"
+    ],
+
+    "modules-center": [
+
+    ],
+
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        "clock",
+        "custom/dunst",
+        "custom/power"
+    ],
+
+    "custom/launcher": {
+        "format": "󰣇",
+        "tooltip": false,
+        "on-click": "uwsm app -- $(wofi --show drun --define=drun-print_desktop_file=true)"
+    },
+
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "󰖟",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": ""
+        },
+        "persistent-workspaces": {
+            "*": 6
+        }
+    },
+
+    "hyprland/submap": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8,
+        "show-passive-items": true
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%  {format_source}",
+        "format-muted": "{icon} {format_source}",
+        "format-bluetooth": "{icon}  {volume}%  {format_source}",
+        "format-bluetooth-muted": "  {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": " ",
+            "headphone-muted": "󰟎 ",
+            "hands-free": "󰋎 ",
+            "hands-free-muted": "󰋐 ",
+            "headset": "󰋎 ",
+            "headset-muted": "󰋐 ",
+            "phone": " ",
+            "phone-muted": "󰷯 ",
+            "portable": "󰄜 ",
+            "portable-muted": "󰥐 ",
+            "default": ["", " ", "  "],
+            "default-muted": " "
+        },
+
+        "on-click": "uwsm app -- pavucontrol",
+        "min-length": 13
+    },
+
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%m-%d-%Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "week-pos": "",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#5e81ac'><b>{}</b></span>",
+                "days": "<span color='#eceff4'><b>{}</b></span>",
+                "weekdays": "<span color='#eceff4'><b>{}</b></span>",
+                "today": "<span color='#bf616a'><b><u>{}</u></b></span>"
+            },
+            "actions": {
+                "on-click-right": "mode",
+                "on-scroll-up": "shift_up",
+                "on-scroll-down": "shift_down",
+            }
+        }
+    },
+
+    "custom/dunst": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "sleep 0.1 && dunstctl history-pop",
+        "on-click-right": "sleep 0.1 && dunstctl close-all",
+        "on-click-middle": "sleep 0.1 && dunstctl set-paused toggle"
+    },
+
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/powermenu.sh"
+    }
+}
