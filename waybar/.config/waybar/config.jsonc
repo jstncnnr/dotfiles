@@ -14,7 +14,8 @@
 
     "modules-right": [
         "tray",
-        "pulseaudio",
+        "pulseaudio#output",
+        "pulseaudio#input",
         "clock",
         "custom/dunst",
         "custom/power"
@@ -52,13 +53,11 @@
         "show-passive-items": true
     },
 
-    "pulseaudio": {
-        "format": "{icon}  {volume}%  {format_source}",
-        "format-muted": "{icon} {format_source}",
-        "format-bluetooth": "{icon}  {volume}%  {format_source}",
-        "format-bluetooth-muted": "  {format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "",
+    "pulseaudio#output": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "{icon}",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-bluetooth-muted": "{icon}",
         "format-icons": {
             "headphone": " ",
             "headphone-muted": "󰟎 ",
@@ -75,7 +74,15 @@
         },
 
         "on-click": "uwsm app -- pavucontrol",
-        "min-length": 13
+        "min-length": 4,
+    },
+
+    "pulseaudio#input": {
+        "format": "{format_source}",
+        "format-muted": "{format_source}",
+        "format-source": "  {volume}%",
+        "format-source-muted": "",
+        "min-length": 4,
     },
 
 
