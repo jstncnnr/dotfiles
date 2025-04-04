@@ -8,4 +8,4 @@ clean:
 	stow --target=$$HOME --delete */
 
 archlinux: clean base
-	stow --target=$$HOME kitty hypr waybar
+	stow --target=$$HOME dunst kitty hypr waybar

@@ -1,0 +1,23 @@
+[global]
+width = (500, 750)
+height = (96, 200)
+origin = top-right
+offset = (8, 8)
+icon_corner_radius = 8
+text_icon_padding = 24
+padding = 12
+horizontal_padding = 12
+gap_size = 8
+format = "<span font_size='small'>%a</span>\n<span font_weight='bold'>%s</span>\n<span font_size='small'>%b</span>"
+corner_radius = 8
+frame_width = 4
+frame_color = "#2e3440"
+font = "JetBrains Mono 10"
+line_height = 4
+dmenu = "wofi --dmenu -p dunst"
+mouse_right_click = "context"
+enable_recursive_icon_lookup = true
+background = "#3b4252"
+foreground = "#eceff4"
+min_icon_size = 64
+max_icon_size = 128
