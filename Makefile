@@ -9,3 +9,5 @@ clean:
 
 archlinux: clean base
 	stow --target=$$HOME dunst kitty hypr waybar
+
+osx: clean base
