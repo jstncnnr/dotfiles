@@ -129,4 +129,3 @@ unset key
 # }}} End configuration added by Zim install
 
 eval "$(oh-my-posh init zsh --config ${XDG_CONFIG_HOME:-$HOME/.config}/oh-my-posh/jstncnnr.omp.yaml)"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
