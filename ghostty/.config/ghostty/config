@@ -1,0 +1,7 @@
+font-family = "MesloLGS Nerd Font Mono"
+
+background-opacity = 0.8
+background-blur = 8
+
+window-theme = "system"
+macos-titlebar-style = "native"
