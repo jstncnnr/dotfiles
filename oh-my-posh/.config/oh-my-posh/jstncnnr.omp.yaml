@@ -28,6 +28,14 @@ blocks:
     leading_powerline_symbol: <transparent>
   - properties:
       cache_duration: none
+    type: session
+    style: powerline
+    foreground: p:black
+    background: p:red
+    powerline_symbol: 
+    template: "{{ if .SSHSession }} {{ .UserName }}@{{ .HostName }} {{ end }}"
+  - properties:
+      cache_duration: none
       style: powerlevel
     template: " \uea83 {{ .Path }} "
     foreground: p:white
